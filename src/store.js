@@ -1,38 +1,21 @@
-import item from './item';
-
 const items = [];
 let hideCheckeditems = false;
 
 const findById = function (id) {
-  return this.items.find(currentItem => currentItem.id === id);
+  return this.items.find((currentItem) => currentItem.id === id);
 };
 
-const addItem = function (name) {
-  try {
-    item.validateName(name);
-    this.items.push(item.create(name));
-  } catch (e) {
-    console.log(e.message);
-  }
+const addItem = function (item) {
+  this.items.push(item);
 };
 
-const findAndToggleChecked = function (id) {
-  const currentItem = this.findById(id);
-  currentItem.checked = !currentItem.checked;
-};
-
-const findAndUpdateName = function (id, name) {
-  try {
-    item.validateName(name);
-    const currentItem = this.findById(id);
-    currentItem.name = name;
-  } catch (e) {
-    console.log('Cannot update name: ' + e.message);
-  }
+const findAndUpdate = function (id, newData) {
+  let foundItem = this.findById(id);
+  Object.assign(foundItem, newData);
 };
 
 const findAndDelete = function (id) {
-  this.items = this.items.filter(currentItem => currentItem.id !== id);
+  this.items = this.items.filter((currentItem) => currentItem.id !== id);
 };
 
 const toggleCheckedFilter = function () {
@@ -44,8 +27,7 @@ export default {
   hideCheckeditems,
   findById,
   addItem,
-  findAndToggleChecked,
-  findAndUpdateName,
+  findAndUpdate,
   findAndDelete,
   toggleCheckedFilter
 };
