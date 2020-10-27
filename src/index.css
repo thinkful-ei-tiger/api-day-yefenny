@@ -51,3 +51,23 @@ button:hover {
 .shopping-item__checked {
   text-decoration: line-through;
 }
+
+.error-container {
+  margin: 10px 0;
+  color: red;
+  font-weight: bold;
+}
+
+.error-content {
+  display: flex;
+
+}
+
+.error-content button{
+  height: fit-content;
+  padding: 1px;
+}
+
+.error-content p {
+  margin: 5px 0 0 5px;
+}

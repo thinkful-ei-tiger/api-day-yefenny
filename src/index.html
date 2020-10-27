@@ -12,7 +12,8 @@
     <h1>Shopping List</h1>
     <form id="js-shopping-list-form">
       <label for="shopping-list-entry">Add an item</label>
-      <input type="text" name="shopping-list-entry" class="js-shopping-list-entry" placeholder="e.g., broccoli">
+      <div class="error-container js-error-container"></div>
+      <input type="text" name="shopping-list-entry" class="js-shopping-list-entry" placeholder="e.g., broccoli" required>
       <button type="submit">Add item</button>
     </form>
     <div>

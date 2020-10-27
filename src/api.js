@@ -2,7 +2,7 @@ const BASE_URL = 'https://thinkful-list-api.herokuapp.com/yefenny';
 
 const listApiFetch = function (...args) {
   let error;
-  fetch(...args)
+  return fetch(...args)
     .then((res) => {
       if (!res.ok) {
         error = { code: res.status };
@@ -20,7 +20,6 @@ const listApiFetch = function (...args) {
         error.message = data.message;
         return Promise.reject(error);
       }
-      console.log(data);
       return data;
     });
 };
